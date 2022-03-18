@@ -2,9 +2,9 @@ version: "3"
 services:
 
   frontend:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./frontend
+    # build:
+    #   dockerfile: Dockerfile.dev
+    #   context: ./frontend
     image: devconnor/docker-frontend
     volumes: 
       - /app/node_modules
@@ -14,9 +14,9 @@ services:
 
   nginx: 
     restart: always
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
+    # build:
+    #   dockerfile: Dockerfile
+    #   context: ./nginx
     image: devconnor/docker-nginx
     ports:
       - "80:80"
@@ -26,9 +26,9 @@ services:
       - backend
 
   backend:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./backend
+    # build:
+    #   dockerfile: Dockerfile.dev
+    #   context: ./backend
     image: devconnor/docker-backend
     container_name: app_backend
     volumes:
